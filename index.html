@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>react test 5</title>
+</head>
+<body>
+   <pre>
+    1. Which lifecycle method is used to clear the DOM when a component is deleted from the DOM?
+    Answer: In class components, it's componentWillUnmount(). In functional components, it's achieved with useEffect().
+    ------------------------------------------------------------------------------------------------------------------------------------
+    2. What is the difference between state and props?
+    Answer:
+    
+    Props:
+    Data is passed from a parent component to a child component.
+    Data cannot be modified by the child component.
+    It is controlled by the parent component.
+    State:
+    Data of the component can be updated locally.
+    Data can be updated using the setState() method.
+    It is controlled by the component in which it is declared.
+    ------------------------------------------------------------------------------------------------------------------------------------
+    3. Explain about Router.
+    Answer:
+    
+    Router is a third-party library that can be installed using npm install react-router-dom.
+    It is used in a single-page application with multiple views.
+    It is used to navigate from one page to another.
+    It maps specific components to different URLs, enabling the rendering of distinct UIs for each route.
+    ------------------------------------------------------------------------------------------------------------------------------------
+    4. Explain Context Flow.
+    Answer:
+    
+    Note : install router to use Router, npm install react-router-dom.
+    First we have to create a folder , inside src->component->sample->context->context.js, reducer.js
+    Another folder inside sample->Router ->Home.js,Service.js.
+    In Home.js and Service.js , create a functional component.
+    Outside src , create routing.js and link Home.js & Service.js in routing.js
+    Create a context using createContext().
+    Declare initial state and an update function in a separate reducer file.
+    Eg : export const initialstate = //initial state
+    
+    {name : "sanjeev"}
+    
+    //update function
+    
+    export const Reducer = (state,action)=>{
+    
+    //update function if give 2, =>state and action}
+    
+    In a component, declare a state using useReducer() hook, and import context, initial state, and the update function.
+    const [state, dispatch] = useReducer(Reducer,initialstate)
+    we have to import context from context.js and initial state and update function from Reducer.js
+    import { globalstate } from './Component/globalstate/context/Context' // context
+    
+    import { initialstate,Reducer } from './Component/globalstate/context/Reducer' // initial state and update function from Reducer.js
+    
+    Wrap the component with the Provider from the context, providing the state and dispatch.
+    Read the state using useContext() hook in the components.
+   </pre>
+</body>
+</html>
